@@ -1,0 +1,6 @@
+node_modules/
+dist/
+docs/ui-review/latest/
+docs/ui-review/diff/
+test-results/
+playwright-report/
