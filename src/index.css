@@ -486,7 +486,7 @@ body {
 
   .ciw-archive-board {
     display: grid;
-    grid-template-columns: minmax(400px, 1fr) minmax(440px, 1fr);
+    grid-template-columns: minmax(440px, 1.1fr) minmax(440px, 1fr);
     gap: clamp(1rem, 2vw, 1.65rem);
     max-width: 1620px;
     margin: 0 auto;
@@ -496,7 +496,9 @@ body {
   .ciw-storybook-panel {
     position: relative;
     width: 100%;
-    align-self: start;
+    height: 100%;
+    min-height: calc(100vh - 8rem);
+    align-self: stretch;
     overflow: visible;
     border: 0;
     background: transparent;
@@ -506,7 +508,9 @@ body {
   .ciw-storybook-frame {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     filter: drop-shadow(0 28px 36px rgba(0, 0, 0, 0.55));
     pointer-events: none;
     user-select: none;
@@ -871,7 +875,10 @@ body {
 
   .ciw-workbench-chapter-1 {
     background:
-      url("./assets/chapters/chapter-1/plate.webp") right top / cover no-repeat;
+      linear-gradient(180deg, rgba(255, 200, 130, 0.18), rgba(255, 160, 90, 0.08) 50%, transparent),
+      url("./assets/chapters/chapter-1/plate.webp") right top / cover no-repeat,
+      #2a1a0c;
+    background-blend-mode: screen, normal, normal;
     border-radius: 0.6rem;
     box-shadow:
       0 30px 50px rgba(0, 0, 0, 0.45),
@@ -1188,9 +1195,9 @@ body {
   }
 
   .ciw-prop-score {
-    top: 0.5rem;
-    right: -2%;
-    width: min(46%, 16rem);
+    top: -0.5rem;
+    right: -3%;
+    width: min(56%, 19rem);
     aspect-ratio: 1024 / 800;
     transform: rotate(6deg);
     z-index: 2;
@@ -1252,9 +1259,9 @@ body {
   }
 
   .ciw-prop-harmonica {
-    top: 2.5rem;
-    left: 22%;
-    width: min(42%, 14rem);
+    top: 2rem;
+    left: 18%;
+    width: min(56%, 19rem);
     aspect-ratio: 1024 / 491;
     transform: rotate(-8deg);
     z-index: 3;
@@ -1262,8 +1269,8 @@ body {
 
   .ciw-prop-cabin-note {
     bottom: 0.5rem;
-    right: -1%;
-    width: min(32%, 11rem);
+    right: -2%;
+    width: min(40%, 14rem);
     aspect-ratio: 1024 / 736;
     transform: rotate(8deg);
     z-index: 4;
@@ -1283,9 +1290,9 @@ body {
   }
 
   .ciw-prop-door {
-    bottom: 4rem;
+    bottom: 4.5rem;
     left: 38%;
-    width: min(50%, 17rem);
+    width: min(62%, 21rem);
     aspect-ratio: 759 / 1024;
     transform: translateX(-50%) rotate(-2deg);
     transition: transform 0.6s ease;
