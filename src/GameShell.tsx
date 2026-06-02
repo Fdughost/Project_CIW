@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import type { GameChapter } from "./gameData";
+import storybookFrameUrl from "./assets/chrome/storybook-frame.webp";
 
 interface MusicControls {
   visible: boolean;
@@ -186,67 +187,13 @@ function StorybookPanel({
 }: Pick<GameShellProps, "chapter" | "story"> & { hintTray: ReactNode }) {
   return (
     <section className="ciw-storybook-panel" aria-label="故事档案书">
-      <div className="ciw-book-ribbons" aria-hidden="true">
-        <span />
-        <span />
-      </div>
-      <div className="ciw-book-lock" aria-hidden="true">
-        <span className="ciw-book-lock-heart" />
-      </div>
-      <div className="ciw-page-tabs" aria-hidden="true">
-        <span>
-          <svg viewBox="0 0 24 24">
-            <path d="M9 4c-2 3-1 6 1 7-1 1-2 3-2 5h8c0-3-2-5-4-6 2-1 3-3 2-5 0-2-3-3-5-1zm-3 14h12v2H6z" />
-          </svg>
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24">
-            <circle cx="8" cy="9" r="4" fill="none" strokeWidth="1.6" stroke="currentColor" />
-            <circle cx="8" cy="9" r="1.4" />
-            <path d="M11 10l8 0M16 10l0 3M19 10l0 4" strokeWidth="1.6" stroke="currentColor" fill="none" strokeLinecap="round" />
-          </svg>
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2l1.5 3.5L17 5l-1.5 3 3 1.5-3 1.5L17 14l-3.5-.5L12 17l-1.5-3.5L7 14l1.5-3-3-1.5 3-1.5L7 5l3.5.5z" fill="none" strokeWidth="1.4" stroke="currentColor" strokeLinejoin="round" />
-            <circle cx="12" cy="11" r="2.5" />
-          </svg>
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24">
-            <path d="M12 20s-7-5-7-11c0-3 2-5 4.5-5 1.5 0 2.5 1 2.5 1s1-1 2.5-1c2.5 0 4.5 2 4.5 5 0 6-7 11-7 11z" />
-          </svg>
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3l5 6-5 12-5-12z" fill="none" strokeWidth="1.6" stroke="currentColor" strokeLinejoin="round" />
-            <path d="M7 9h10M12 3v18" strokeWidth="1.4" stroke="currentColor" fill="none" />
-          </svg>
-        </span>
-      </div>
-
+      <img
+        className="ciw-storybook-frame"
+        src={storybookFrameUrl}
+        alt=""
+        aria-hidden
+      />
       <div className="ciw-book-page">
-        <svg
-          className="ciw-book-alice"
-          viewBox="0 0 120 240"
-          aria-hidden="true"
-        >
-          <path
-            d="M60 22c8 0 14 7 14 16 0 6-2 11-5 14 5 4 9 11 9 18l-3 11 4 18-2 18 5 30c2 14 1 28-3 42l-3 14 4 18-5 9-4-10c-3 8-9 13-11 13s-8-5-11-13l-4 10-5-9 4-18-3-14c-4-14-5-28-3-42l5-30-2-18 4-18-3-11c0-7 4-14 9-18-3-3-5-8-5-14 0-9 6-16 14-16z"
-            fill="currentColor"
-            opacity="0.06"
-          />
-          <path
-            d="M40 90c4 2 8 6 10 12M80 90c-4 2-8 6-10 12"
-            stroke="currentColor"
-            strokeOpacity="0.08"
-            strokeWidth="1.2"
-            fill="none"
-          />
-        </svg>
-        <div className="ciw-book-corner-c" aria-hidden="true">
-          <span>C</span>
-        </div>
         <p className="ciw-book-master-title">CHLOE IN WONDERLAND</p>
         <p className="ciw-book-master-subtitle">— STORYBOOK ARCHIVE —</p>
         <p className="ciw-archive-label">Chapter {String(chapter.id).padStart(2, "0")}</p>
