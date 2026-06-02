@@ -236,15 +236,13 @@ body {
     grid-template-columns: minmax(220px, 1.15fr) minmax(220px, 0.9fr) minmax(260px, 1fr) auto;
     gap: clamp(0.75rem, 1.6vw, 1.25rem);
     align-items: center;
-    border-top: 3px solid;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(90deg, #7a4d12, #f8d887 30%, #c98727 60%, #7a4d12) 1;
+    min-height: 4.6rem;
+    border: 0;
     background:
-      linear-gradient(180deg, rgba(8, 38, 35, 0.98), rgba(3, 22, 21, 0.98)),
-      repeating-linear-gradient(90deg, rgba(217, 164, 78, 0.07) 0 1px, transparent 1px 64px);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 220, 140, 0.18),
-      0 18px 34px rgba(0, 0, 0, 0.5);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.22)),
+      url("./assets/chrome/hud-bar.webp") center / 100% 100% no-repeat,
+      linear-gradient(180deg, #052723, #021614);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.5);
     padding: 0.8rem clamp(1rem, 2.6vw, 2.25rem);
   }
 
@@ -302,6 +300,11 @@ body {
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+  }
+
+  .ciw-hud-progress,
+  .ciw-hud-props {
+    visibility: hidden;
   }
 
   .ciw-hud-progress {
@@ -777,8 +780,8 @@ body {
 
   .ciw-objective-plaque {
     position: relative;
-    margin: 0 auto 0.8rem;
-    width: min(100%, 26rem);
+    margin: 0 auto 0.6rem;
+    width: min(72%, 17rem);
     aspect-ratio: 1024 / 323;
     border: 0;
     background: url("./assets/chrome/brass-plaque.webp") center / contain no-repeat;
@@ -808,9 +811,9 @@ body {
   }
 
   .ciw-objective-label {
-    color: rgba(75, 50, 18, 0.78);
+    color: rgba(75, 50, 18, 0.85);
     font-family: var(--ciw-font-display);
-    font-size: 0.6rem;
+    font-size: 0.52rem;
     font-weight: 700;
     letter-spacing: 0.32em;
     text-transform: uppercase;
@@ -819,9 +822,9 @@ body {
   .ciw-objective-text {
     color: #3a230b;
     font-family: var(--ciw-font-display);
-    font-size: clamp(0.78rem, 0.9vw, 0.92rem);
+    font-size: 0.66rem;
     font-style: italic;
-    line-height: 1.3;
+    line-height: 1.25;
   }
 
   .ciw-story-content {
@@ -847,10 +850,8 @@ body {
   .ciw-workbench-panel::before {
     inset: 0;
     background:
-      radial-gradient(ellipse at 92% 5%, rgba(255, 145, 50, 0.42) 0%, rgba(255, 190, 90, 0.22) 16%, transparent 32%),
-      radial-gradient(ellipse at 96% 14%, rgba(255, 220, 130, 0.32) 0%, transparent 18%),
-      radial-gradient(ellipse at 50% 110%, rgba(255, 180, 100, 0.12) 0%, transparent 40%),
-      radial-gradient(ellipse at 12% 86%, rgba(75, 18, 31, 0.18), transparent 16rem);
+      radial-gradient(ellipse at 92% 8%, rgba(255, 145, 50, 0.22) 0%, transparent 28%),
+      radial-gradient(ellipse at 12% 86%, rgba(75, 18, 31, 0.12), transparent 14rem);
   }
 
   .ciw-workbench-panel::after {
@@ -870,17 +871,18 @@ body {
 
   .ciw-workbench-chapter-1 {
     background:
-      url("./assets/chapters/chapter-1/plate.webp") center / cover no-repeat;
+      url("./assets/chapters/chapter-1/plate.webp") right top / cover no-repeat;
     border-radius: 0.6rem;
     box-shadow:
-      0 30px 50px rgba(0, 0, 0, 0.55),
-      inset 0 0 0 1px rgba(255, 220, 160, 0.05);
+      0 30px 50px rgba(0, 0, 0, 0.45),
+      inset 0 0 0 1px rgba(255, 220, 160, 0.08);
   }
 
   .ciw-workbench-chapter-1::before {
     background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.32)),
-      radial-gradient(ellipse at 92% 8%, rgba(255, 145, 50, 0.18), transparent 20%);
+      radial-gradient(ellipse 360px 240px at 95% 6%, rgba(255, 120, 30, 0.85) 0%, rgba(255, 180, 80, 0.45) 35%, transparent 75%),
+      radial-gradient(ellipse 180px 120px at 98% 22%, rgba(255, 220, 130, 0.65) 0%, transparent 70%),
+      radial-gradient(ellipse at 50% 60%, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
   }
 
   .ciw-workbench-chapter-5,
@@ -1187,10 +1189,10 @@ body {
 
   .ciw-prop-score {
     top: 0.5rem;
-    right: -1%;
-    width: min(50%, 19rem);
+    right: -2%;
+    width: min(46%, 16rem);
     aspect-ratio: 1024 / 800;
-    transform: rotate(4deg);
+    transform: rotate(6deg);
     z-index: 2;
   }
 
@@ -1250,20 +1252,20 @@ body {
   }
 
   .ciw-prop-harmonica {
-    top: 0.5rem;
-    left: -1%;
-    width: min(48%, 17rem);
+    top: 2.5rem;
+    left: 22%;
+    width: min(42%, 14rem);
     aspect-ratio: 1024 / 491;
-    transform: rotate(-15deg);
+    transform: rotate(-8deg);
     z-index: 3;
   }
 
   .ciw-prop-cabin-note {
     bottom: 0.5rem;
-    right: -2%;
-    width: min(34%, 12rem);
+    right: -1%;
+    width: min(32%, 11rem);
     aspect-ratio: 1024 / 736;
-    transform: rotate(10deg);
+    transform: rotate(8deg);
     z-index: 4;
   }
 
@@ -1281,13 +1283,13 @@ body {
   }
 
   .ciw-prop-door {
-    bottom: -0.5rem;
-    left: 36%;
-    width: min(58%, 19rem);
+    bottom: 4rem;
+    left: 38%;
+    width: min(50%, 17rem);
     aspect-ratio: 759 / 1024;
-    transform: translateX(-50%) rotate(-1.2deg);
+    transform: translateX(-50%) rotate(-2deg);
     transition: transform 0.6s ease;
-    z-index: 1;
+    z-index: 2;
   }
 
   .ciw-prop-door.is-turning {
